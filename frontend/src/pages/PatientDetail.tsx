@@ -13,7 +13,7 @@ interface PatientProfile {
   email: string;
 }
 
-interface Record {
+interface MedRecord {
   id: string;
   diagnosis: string;
   prescriptions: string;
@@ -41,7 +41,7 @@ const statusColors: Record<string, { bg: string; color: string }> = {
 export default function PatientDetail() {
   const { id } = useParams<{ id: string }>();
   const [profile, setProfile] = useState<PatientProfile | null>(null);
-  const [records, setRecords] = useState<Record[]>([]);
+  const [records, setRecords] = useState<MedRecord[]>([]);
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [tab, setTab] = useState<Tab>('profile');
   const [loading, setLoading] = useState(true);
